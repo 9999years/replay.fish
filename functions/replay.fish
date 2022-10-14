@@ -39,7 +39,7 @@ function replay --description "Run Bash commands replaying changes in Fish"
                     else
                         set --query env[1] && string match --entire --regex -- "^alias" $line || echo "echo \"$line\""
                     end
-                end | string replace --all -- \$ \\\$
+                end
                 for name in (set --export --names)
                     contains -- $name $env || echo "set --erase $name"
                 end
